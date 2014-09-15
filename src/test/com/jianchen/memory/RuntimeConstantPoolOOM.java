@@ -5,6 +5,9 @@ import java.util.List;
 
 /**
  * VM Args：-XX:PermSize=10M -XX:MaxPermSize=10M
+ * <p/>
+ * 该程序运行在JDK1.6的环境下。测试基于如下背景：运行时常量池属于方法区（HotSpot虚拟机中的永久代）
+ * 如果在JDK1.7下运行，则不会得到相同的结果，while循环会一直进行下去
  *
  * @author: jian.cai@qunar.com
  * @Date: 14-9-13 Time: 下午2:42
