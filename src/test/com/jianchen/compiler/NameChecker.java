@@ -36,7 +36,8 @@ public class NameChecker {
     }
 
     /**
-     * 名称检查器实现类，继承了JDK 1.6中新提供的ElementScanner6<br>    * 将会以Visitor模式访问抽象语法树中的元素
+     * 名称检查器实现类，继承了JDK 1.6中新提供的ElementScanner6<br>
+     * 将会以Visitor模式访问抽象语法树中的元素
      */
     private class NameCheckScanner extends ElementScanner6<Void, Void> {
         /**

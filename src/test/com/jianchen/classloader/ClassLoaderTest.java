@@ -29,14 +29,16 @@ public class ClassLoaderTest {
             }
         };
         Object obj = myLoader.loadClass("com.jianchen.classloader.ClassLoaderTest").newInstance();
+        System.out.println(obj.getClass().getName());
         System.out.println(obj.getClass()); //输出class com.jianchen.classloader.ClassLoaderTest
         System.out.println(obj.getClass().getClassLoader().getClass());//输出class com.jianchen.classloader.ClassLoaderTest$1
-        System.out.println(obj instanceof com.jianchen.classloader.ClassLoaderTest);//输出false
-    }
 
-    /**
-     * 比较两个类是否“相等”，只有在这两个类是由同一个类加载器加载的前提下才有意义，
-     * 否则，即使这两个类来源于同一个Class文件，被同一个虚拟机加载，只要加载它们的类加载器不同，
-     * 那这两个类就必定不相等。
-     */
+        /**
+         * 比较两个类是否“相等”，只有在这两个类是由同一个类加载器加载的前提下才有意义，
+         * 否则，即使这两个类来源于同一个Class文件，被同一个虚拟机加载，只要加载它们的类加载器不同，
+         * 那这两个类就必定不相等。
+         */
+        System.out.println(obj instanceof com.jianchen.classloader.ClassLoaderTest);//输出false,应为import进来的ClassLoaderTest是用系统加载器装载的
+        System.out.println(ClassLoaderTest.class.getClassLoader().getClass()); //输出class sun.misc.Launcher$AppClassLoader
+    }
 }
