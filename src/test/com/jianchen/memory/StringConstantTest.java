@@ -44,4 +44,11 @@ public class StringConstantTest {
         String s1 = a + b;//实际编译后的代码是StringBuilder.append方法进行处理的
         System.out.println(s1 == ab);//输出false
     }
+
+
+    @Test
+    public void testString4() {
+        String ab = "ab";
+        System.out.println(("a" + "b") == ab); //输出true,代码编译后就等同于"ab"=="ab"
+    }
 }
