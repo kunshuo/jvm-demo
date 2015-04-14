@@ -1,5 +1,7 @@
 package com.jianchen.classloader;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
@@ -10,7 +12,7 @@ import java.util.concurrent.atomic.AtomicLong;
  */
 public class DataHolder {
     private static AtomicLong count = new AtomicLong();
-
+    public static List<String> list = new ArrayList<String>();
     {
         count.incrementAndGet();
         System.out.println("current count value is " + count);

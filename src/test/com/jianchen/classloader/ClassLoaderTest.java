@@ -89,5 +89,4 @@ public class ClassLoaderTest {
         return myLoader.loadClass(className).newInstance();
     }
 
-
 }
